@@ -4,6 +4,7 @@
 import React, { PropTypes, Component } from 'react';
 import { Menu, Icon, Button } from 'antd';
 import { Link } from 'dva/router';
+import App from '../../App';
 const { SubMenu }  = Menu;
 
 
@@ -20,6 +21,7 @@ export default class UserPage extends Component {
         return (
             <div>
                 <h1>this is UserPage</h1>
+                <App/>
                 <Link to='/password'>to pwd page</Link>
             </div>
         );
