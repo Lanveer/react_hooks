@@ -7,7 +7,7 @@
     "dev": "webpack-dev-server --hot --open --inline --progress --colors --config config/webpack.dev.js",
     "start":   "npm run dev",
     "build": "webpack --progress --colors --config config/webpack.prod.js",
-    "build:dll": "webpack --config --progress --color config/webpack.dll.js"
+    "build:dll": "webpack --config  config/webpack.dll.js"
   },
   "keywords": [
     "webpack",

@@ -90,7 +90,8 @@ module.exports = {
             inject: 'body'
         }),
         new AddAssetHtmlWebpackPlugin({
-            filepath: path.resolve(__dirname, '../dll/antd.dll.js') // 对应的 dll 文件路径
+            // filepath: path.resolve(__dirname, '../dll/antd.dll.js') // 对应的 dll 文件路径
+            filepath: '../dll/*.dll.js',
         })
     ]
 };

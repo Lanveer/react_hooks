@@ -5,24 +5,20 @@
 /**
 *  这里使用useState 方法
 */
-import React, {useState } from 'react';
-// import './user.less'
-
-function UserPage() {
+import React, {useState,useEffect } from 'react';
+function UserPageOFEffects() {
     const [count, setCount] = React.useState(0);
+    useEffect(()=>{
+            document.title = `点击了 ${count} 次`;
+        },[count]
+    );
     return (
         <div>
-            <div className="user_list">3323</div>
             <h1>这是user页面,计数器使用useState</h1>
             Count: {count}
             <button onClick={() => setCount(prevCount => prevCount + 1)}>+</button>
             <button onClick={() => setCount(prevCount => prevCount - 1)}>-</button>
-
-
-            <h1>
-
-            </h1>
         </div>
     )
 }
-export  default UserPage
+export default UserPageOFEffects
