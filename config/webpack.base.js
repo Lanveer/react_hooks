@@ -6,6 +6,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin');
+const manifest = require('../dll/vendors.dll')
 function getFileRelativePath(dir) {
     return path.join(__dirname, '..', dir);
 }
@@ -53,6 +54,7 @@ module.exports = {
                             strictMath: false,
                             noIeCompat: true,
                             javascriptEnabled: true,
+                            compact:true
                         }
                     }
                 ]
@@ -87,7 +89,8 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'index.html',
-            inject: 'body'
+            inject: 'body',
+            lan: '../dll/' + manifest+ '' //manifest就是dll生成的json
         }),
         new AddAssetHtmlWebpackPlugin({
             // filepath: path.resolve(__dirname, '../dll/antd.dll.js') // 对应的 dll 文件路径
