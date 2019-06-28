@@ -60,6 +60,15 @@ module.exports = {
                 ]
             },
             {
+                test: /\.js$/,
+                loader: 'eslint-loader',
+                enforce: "pre",
+                include: [path.resolve(__dirname, 'src')],
+                options: {
+
+                }
+            },
+            {
                 test: /\.(woff|woff2|eot|ttf)$/,
                 use: [
                     {

@@ -9,4 +9,6 @@
   "bracketSpacing": false, // {foo: xx}还是{ foo: xx }
   "jsxBracketSameLine": false, //看官网
   "arrowParens": "always" //剪头函数参数是否使用（）
+  "semicolons": true //语句末尾加上分号（）
+  "quotes": true //单引号（）
 }
