@@ -3,6 +3,7 @@
  */
 import React, { PropTypes, Component } from 'react';
 import { Link } from 'dva/router';
+import './pwd.less'
 
 export default class PwdPage extends Component {
     constructor(props) {
@@ -19,6 +20,7 @@ export default class PwdPage extends Component {
             <div>
                 <h1>this is PwdPage </h1>
                 <Link to='/user'>to user page</Link>
+                <div className="pwd_list">hello world</div>
             </div>
         );
     }

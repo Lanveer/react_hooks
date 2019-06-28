@@ -5,7 +5,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const merge = require('webpack-merge');
 const baseWebpackConfig = require('./webpack.base');
-
+const ZipPlugin = require('zip-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -30,6 +30,10 @@ module.exports = merge(baseWebpackConfig, {
             filename: '[name].[contenthash].css',
             chunkFilename: '[id].[contenthash].css'
         }),
+        new ZipPlugin({
+            path: path.join(__dirname, '../', 'zip'),
+            filename: 'ac.zip'
+        })
     ],
     // 优化
     module: {
