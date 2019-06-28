@@ -7,7 +7,7 @@
 */
 import React, {useState } from 'react';
 import {Button,Tabs} from 'antd';
-import './user.less'
+// import './user.less'
 const { TabPane } = Tabs;
 
 

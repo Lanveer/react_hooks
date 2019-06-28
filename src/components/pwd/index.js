@@ -3,7 +3,7 @@
  */
 import React, { PropTypes, Component } from 'react';
 import { Link } from 'dva/router';
-import './pwd.less'
+// import './pwd.less'
 
 export default class PwdPage extends Component {
     constructor(props) {
@@ -13,6 +13,9 @@ export default class PwdPage extends Component {
     }
 
     componentDidMount() {
+        function HelloWorld({greeting = "hello", greeted = '"World"', silent = false, onMouseOver,}) {
+            let noTrailingComma = [a , b,c]
+        }
     }
 
     render() {
