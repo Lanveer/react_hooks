@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb", "plugin:prettier/recommended","standard","prettier"], // eslint扩展规则
+  "extends": ["airbnb", "plugin:prettier/recommended"], // eslint扩展规则
   "parserOptions": {
     "ecmaVersion": 7,
     "sourceType": "module",
