@@ -3,7 +3,7 @@ import dynamic from 'dva/dynamic';
 export const dynamicWrapper = (app, models, component, ifPathFree) =>
   dynamic({
     app,
-    models: [],
+     models: ifPathFree ? models: () => models.map(m => import(`models/${m}.js`)),
     component,
   });
 

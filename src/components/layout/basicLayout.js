@@ -43,7 +43,7 @@ export default class BasicLayout extends PureComponent {
 
 
     render() {
-        const { history, navData, match } = this.props;
+        const { navData } = this.props;
         return (
             <Layout>
                 <Sider

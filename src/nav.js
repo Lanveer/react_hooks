@@ -28,5 +28,25 @@ export default app => [
         },
 
     ]
-  }
+  },
+    {
+        component: dynamicWrapper(app, [], () => import('./components/layout/login/index')),
+        layout: 'user',
+        children: [
+            {
+                name: '用户',
+                icon: 'user',
+                path: 'user',
+                children: [
+                    {
+                        name: '登陆',
+                        path: 'login',
+                        component: dynamicWrapper(app, ['user'], () =>
+                            import('./components/layout/login/index')
+                        )
+                    }
+                ]
+            }
+        ]
+    }
 ];
