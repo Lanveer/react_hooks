@@ -2,7 +2,7 @@ import { dynamicWrapper } from '../utils/core';
 
 export default app => [
   {
-    component: dynamicWrapper(app, ['user'], () => import('./components/layout/basic')),
+    component: dynamicWrapper(app, ['user'], () => import('./components/layout/basicLayout')),
     layout: 'basic',
     children: [
       {
