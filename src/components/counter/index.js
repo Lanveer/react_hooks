@@ -9,7 +9,8 @@ import {getListData} from '../../../service/list';
 
 
 @connect(state => ({
-    list: state.user.list
+    list: state.user.list,
+    author:state.user.author
 }))
 export default class PwdPage extends Component {
   constructor(props) {
@@ -21,6 +22,16 @@ export default class PwdPage extends Component {
   };
 
 
+    getAuthor=()=>{
+      const {dispatch} = this.props;
+      dispatch({
+          type:'user/getAuthor',
+          payload:{
+              author:'fffff'
+          }
+      });
+      console.log('author is:', this.props.author);
+  };
 
   render() {
     return (
@@ -30,6 +41,7 @@ export default class PwdPage extends Component {
         <Link to="/useState">useState</Link>
         <Link to="/useEffect">useEffect</Link>
         <Link to="/useEffectM">useEffectM</Link>
+          <Button type="primary" onClick={()=>{this.getAuthor()}}>click</Button>
       </div>
     );
   }

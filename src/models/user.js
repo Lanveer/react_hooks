@@ -8,16 +8,27 @@ export default {
   state: {
     name:'lanveer',
     list:[],
-    pList:[]
+    pList:[],
+      author:'lanveer'
   },
     effects:{
+
+      *getAuthor({payload}, {call, put}){
+          yield put({
+              type:'getAuthors',
+              payload:{
+                  author:payload.author
+              }
+          })
+      },
       *getListAct({payload},{call,put}){
-         const listData=  yield call(getListData);
+         // const listData=  yield call(getListData);
           yield put({
               type: 'saveList',
               payload: {
                   name: 'fanlang',
-                  list:listData.result.data
+                  // list:listData.result.data
+                  list:['1111', '22222']
               }
           });
       },
@@ -33,6 +44,13 @@ export default {
         }
     },
     reducers: {
+
+        getAuthors(state,{payload:{author}}){
+          return {
+              ...state,
+              author
+          }
+      },
         saveList(state, {payload:{list}}) {
             return {
                 ...state,
