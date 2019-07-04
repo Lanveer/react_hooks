@@ -3,7 +3,13 @@
  */
 import React, { Component } from "react";
 import { Link } from "dva/router";
+import {connect} from 'dva';
 import "./pwd.less";
+
+@connect(state=>({
+    data:state.user.pList,
+    name:state.user.name,
+}))
 
 export default class PwdPage extends Component {
   constructor(props) {
@@ -11,7 +17,9 @@ export default class PwdPage extends Component {
     this.state = {};
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+      console.log('data is:', this.props.name);
+  }
 
   render() {
     return (
