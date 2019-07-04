@@ -2,6 +2,7 @@
   "presets": ["latest", 'react', "stage-2","es2016"],
   "plugins": [
     ["import",{"libraryName":"antd", "style":true}],
-    "transform-decorators-legacy"
+    "transform-decorators-legacy",
+    "transform-runtime"
   ]
 }

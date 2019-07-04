@@ -26,6 +26,7 @@ module.exports = {
         alias: {
             app: getFileRelativePath('src'),
             models: getFileRelativePath('src/models'),
+            service:getFileRelativePath('service')
         }
     },
     // loader

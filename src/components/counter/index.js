@@ -3,13 +3,39 @@
  */
 import React, { Component } from "react";
 import { Link } from "dva/router";
+import { connect } from 'dva';
+import {getListData} from '../../../service/list';
+
+
+@connect(state => ({
+    isLoading: state.user,
+}))
 export default class PwdPage extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
-  componentDidMount() {}
+
+
+  componentDidMount() {
+     this.getList();
+  };
+
+
+  getList =()=>{
+      const { dispatch } = this.props;
+      dispatch({
+          type: 'user/getListAct',
+          payload: {
+              id:'123',
+              name:'lan'
+          }
+      });
+      // getListData().then(r=>{
+      //     console.log('r data is:', r);
+      // })
+  }
 
   render() {
     return (

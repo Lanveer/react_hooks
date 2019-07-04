@@ -86,7 +86,7 @@ function RouterConfig({ history,app}) {
         {/*<Route path="/password" exact component={PwdPage} />*/}
         {/*<Route path="/user" exact component={UserPage} />*/}
           <Route
-              path="/"
+              path="/login"
               render={props => <UserLayout {...props} {...passProps('user')} />}
           />
           {initRouteConfig.map(item => {
