@@ -18,7 +18,22 @@ export default class PwdPage extends Component {
     this.state = {};
   }
   componentDidMount() {
-     console.log('get list data is:', this.props.list);
+     // console.log('get list data is:', this.props.list);
+      this.initList()
+  };
+
+
+  initList= ()=>{
+      const {dispatch} = this.props;
+      dispatch({
+          type: 'user/getListAct',
+          payload:{ },
+          callback:(res)=>{
+              if (res) {
+                  console.log('get list data is:', res);// 请求完成后返回的结果
+              }
+          }
+      })
   };
 
 
@@ -28,7 +43,13 @@ export default class PwdPage extends Component {
           type:'user/getAuthor',
           payload:{
               author:'fffff'
+          },
+          callback: (res) => {
+              if (res) {
+                  console.log('call back res is:', res);// 请求完成后返回的结果
+              }
           }
+
       });
       console.log('author is:', this.props.author);
   };

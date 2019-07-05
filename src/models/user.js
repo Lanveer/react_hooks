@@ -13,7 +13,8 @@ export default {
   },
     effects:{
 
-      *getAuthor({payload}, {call, put}){
+      *getAuthor({payload, callback }, {call, put}){
+          callback({cb:'this is cb'});
           yield put({
               type:'getAuthors',
               payload:{
@@ -21,8 +22,9 @@ export default {
               }
           })
       },
-      *getListAct({payload},{call,put}){
-         // const listData=  yield call(getListData);
+      *getListAct({payload, callback},{call,put}){
+         const listData=  yield call(getListData);
+         callback(listData.result.data);
           yield put({
               type: 'saveList',
               payload: {
@@ -72,9 +74,9 @@ export default {
 
             return history.listen( ({pathname, query}) => {
                 if(pathname === '/counter') {
-                    dispatch({
-                        type: 'user/getListAct'
-                    })
+                    // dispatch({
+                    //     type: 'user/getListAct'
+                    // })
                 }else if(pathname === '/password'){
                     dispatch({
                         type: 'user/passwordAct',
